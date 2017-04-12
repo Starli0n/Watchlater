@@ -1,0 +1,45 @@
+{
+  "name": "watchlater",
+  "version": "1.0.0",
+  "description": "Watchlater App",
+  "main": "public/index.html",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-inject-string": "^1.1.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-usemin": "^0.3.23",
+    "gulp-zip": "^3.2.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
+  },
+  "devDependencies": {
+    "gulp-composer": "^0.4.0",
+    "gulp-util": "^3.0.7"
+  },
+  "scripts": {
+    "test": "gulp :test",
+    "postinstall": "node ./node_modules/bower/bin/bower install && gulp :publish && gulp :deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Starli0n@github.com/Starli0n/Watchlater.git"
+  },
+  "keywords": [
+    "slim",
+    "microframework",
+    "rest",
+    "router",
+    "psr7"
+  ],
+  "author": "Starli0n <Starli0n@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Starli0n/Watchlater/issues"
+  },
+  "homepage": "https://github.com/Starli0n/Watchlater#readme"
+}

@@ -1,0 +1,3 @@
+# for php-coveralls
+coverage_clover: report/build/clover.xml
+json_path: report/build/coveralls-upload.json

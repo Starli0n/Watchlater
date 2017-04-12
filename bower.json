@@ -1,0 +1,20 @@
+{
+  "name": "watchlater",
+  "homepage": "https://github.com/Starli0n/Watchlater",
+  "authors": [
+    "Starli0n <Starli0n@users.noreply.github.com>"
+  ],
+  "description": "Watchlater App",
+  "main": "public/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "axios": "^0.16.1"
+  }
+}

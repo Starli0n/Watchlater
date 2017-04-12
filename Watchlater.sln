@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "Watchlater", "Watchlater.phpproj", "{C89D291F-A175-41E5-B885-0CDB24F2E621}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug|Any CPU = debug|Any CPU
+		deploy|Any CPU = deploy|Any CPU
+		info|Any CPU = info|Any CPU
+		public|Any CPU = public|Any CPU
+		publish|Any CPU = publish|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C89D291F-A175-41E5-B885-0CDB24F2E621}.debug|Any CPU.ActiveCfg = debug|Any CPU
+		{C89D291F-A175-41E5-B885-0CDB24F2E621}.deploy|Any CPU.ActiveCfg = deploy|Any CPU
+		{C89D291F-A175-41E5-B885-0CDB24F2E621}.info|Any CPU.ActiveCfg = info|Any CPU
+		{C89D291F-A175-41E5-B885-0CDB24F2E621}.public|Any CPU.ActiveCfg = public|Any CPU
+		{C89D291F-A175-41E5-B885-0CDB24F2E621}.publish|Any CPU.ActiveCfg = publish|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">public</Configuration>
+    <Name>Watchlater</Name>
+    <ProjectGuid>{C89D291F-A175-41E5-B885-0CDB24F2E621}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <Runtime>PHP</Runtime>
+    <RuntimeVersion>7.0</RuntimeVersion>
+    <StartAction>SpecificPage</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'info' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+    <SpecificPageValue>test/info.php</SpecificPageValue>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+    <SpecificPageValue>test/debug.php</SpecificPageValue>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'public' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+    <SpecificPageValue>public/index.html</SpecificPageValue>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'publish' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+    <SpecificPageValue>publish/index.html</SpecificPageValue>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'deploy' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+    <SpecificPageValue>watchlater/public/index.html</SpecificPageValue>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="logs\README.md" />
+    <Compile Include="public\api\index.php" />
+    <Compile Include="public\index.html" />
+    <Compile Include="src\api\router.php" />
+    <Compile Include="src\dependencies.php" />
+    <Compile Include="src\middleware.php" />
+    <Compile Include="src\routes.php" />
+    <Compile Include="src\settings.php" />
+    <Compile Include=".gitignore" />
+    <Compile Include="composer.json" />
+    <Compile Include="composer.lock" />
+    <Compile Include="README.md" />
+    <Compile Include="test\bootstrap.php" />
+    <Compile Include="test\debug.php" />
+    <Compile Include="test\info.php" />
+    <Compile Include="test\src\api\routerTest.php" />
+    <Compile Include="test\tools.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="logs" />
+    <Folder Include="public" />
+    <Folder Include="public\api\" />
+    <Folder Include="public\script\" />
+    <Folder Include="src" />
+    <Folder Include="src\api\" />
+    <Folder Include="test" />
+    <Folder Include="test\src\" />
+    <Folder Include="test\src\api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".bowerrc" />
+    <Content Include=".jshintrc" />
+    <Content Include="bower.json" />
+    <Content Include="gulpfile.js" />
+    <Content Include="package.json" />
+    <Content Include="public\api\.htaccess" />
+    <Content Include="public\script\bpd.js" />
+    <Content Include="test\.coveralls.yml" />
+    <Content Include="test\phpunit.xml" />
+  </ItemGroup>
+</Project>
