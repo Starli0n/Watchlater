@@ -37,6 +37,8 @@
     <Compile Include="public\api\index.php" />
     <Compile Include="public\index.html" />
     <Compile Include="src\api\router.php" />
+    <Compile Include="src\api\admin.php" />
+    <Compile Include="src\api\token.php" />
     <Compile Include="src\dependencies.php" />
     <Compile Include="src\middleware.php" />
     <Compile Include="src\routes.php" />

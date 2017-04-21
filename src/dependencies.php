@@ -3,6 +3,10 @@
 
 $container = $app->getContainer();
 
+$container['jwt'] = function (Slim\Container $c) {
+    return new StdClass;
+};
+
 // view renderer
 $container['renderer'] = function (Slim\Container $c) {
     $settings = $c->get('settings')['renderer'];
@@ -21,7 +25,11 @@ $container['logger'] = function (Slim\Container $c) {
 // Watchlater
 $container['api'] = function (Slim\Container $c) {
     $settings = $c->get('settings')['api'];
-    return null;
+    return new Watchlater\Api\Admin(
+        $settings['jwt_secret'],
+        $settings['jwt_algorithm'],
+        $settings['jwt_applications']
+    );
 };
 
 // Error handler

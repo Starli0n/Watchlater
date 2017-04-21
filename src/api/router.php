@@ -33,11 +33,18 @@ class Router
     private $logger;
 
     /**
-     * Downloader
+     * Admin
      *
-     * @var Downloader
+     * @var Admin
      */
     private $api;
+
+    /**
+     * Token
+     *
+     * @var Token
+     */
+    private $token;
 
     /**
      * Create a new Router controller
@@ -48,6 +55,7 @@ class Router
     {
         $this->logger = $container->logger;
         $this->api = $container->api;
+        $this->token = $container->token->decoded;
     }
 
     /**
@@ -72,5 +80,54 @@ class Router
         $data = array('message' => "Hello $name");
         $response = $response->withJson($data);
         return $response;
+    }
+
+    /**
+     * [POST] Claim a JWT token
+     *
+     * The Response is a json message including the 'token'
+     *
+     * @param Request   $request  The current Request object
+     * @param Response  $response The current Response object
+     * @param Response  $args     The additional arguments
+     * @return Response The updated Response object in (json)
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function token(Request $request, Response $response, array $args): Response
+    {
+        $this->logger->info("Route '/' token");
+
+        $username = $request->getParsedBodyParam('username');
+        $applications = $request->getParsedBodyParam('applications');
+        $data = $this->api->token($username, $applications);
+
+        return $response->withJson($data, 201);
+    }
+
+    /**
+     * [GET] Ping the server in a restricted area
+     *
+     * The Response is a json message including the 'token'
+     *
+     * @param Request   $request  The current Request object
+     * @param Response  $response The current Response object
+     * @param Response  $args     The additional arguments
+     * @return Response The updated Response object in (json)
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function adminPing(Request $request, Response $response, array $args): Response
+    {
+        $this->logger->info("Route '/' adminPing");
+
+        if (in_array('Watchlater', $this->token->app)) {
+            $data = array('message' => 'success!');
+            $response = $response->withJson($data);
+            return $response;
+        } else {
+            /* No scope so respond with 401 Unauthorized */
+            return $response->withStatus(401);
+        }
     }
 }
